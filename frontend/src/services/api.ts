@@ -1,7 +1,7 @@
 import axios from 'axios'
 import type { Fan, SensorReading, PredictionRequest, PredictionResponse, Alert, ModelMetrics } from '../types'
 
-const api = axios.create({ baseURL: '/api' })
+const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL })
 
 export const fanApi = {
   list: () => api.get<Fan[]>('/fans/').then(r => r.data),
