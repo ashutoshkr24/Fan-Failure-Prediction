@@ -11,10 +11,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["https://fan-failure-prediction-oxrb-3hop29c25.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_origin=["*"],
 )
 
 @app.on_event("startup")
